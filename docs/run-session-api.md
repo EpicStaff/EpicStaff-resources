@@ -8,7 +8,7 @@ POST /api/run-session/
 ```
 
 ## **Description**
-Starts a new session for a given graph.  
+Starts a new session for a given flow.  
 
 - Accepts **flow variables** and **files**.  
 - Returns a unique `session_id` for tracking.  
@@ -27,7 +27,7 @@ Starts a new session for a given graph.
 ### Body Parameters
 | Field       | Type         | Required | Description |
 |-------------|-------------|----------|-------------|
-| `graph_id`  | integer     | ✅        | ID of the graph to run |
+| `graph_id`  | integer     | ✅        | ID of the flow to run |
 | `variables` | JSON object | ❌        | Key/value pairs used as runtime variables |
 | `files`     | file(s)     | ❌        | One or more files (e.g., `.txt`, `.csv`) |
 
