@@ -84,7 +84,7 @@ def main(start_number: int) -> dict:
 
 ### UI Representation
 
-![End Node Result](images/end-node-image.png)
+![End Node Result](../images/end-node-image.png)
 
 ### API Results
 
