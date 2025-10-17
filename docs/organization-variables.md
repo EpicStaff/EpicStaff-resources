@@ -97,7 +97,7 @@ POST /api/run-session/
 | `graph_id`        | integer     | ✅       | ID of the flow to run |
 | `variables`       | JSON object | ❌       | Key/value pairs used as runtime variables |
 | `organization_data` | JSON object | ❌     | Organization credentials |
-| `user_data`       | JSON object | ❌       | User credentials |
+| `organization_user_data`       | JSON object | ❌       | User credentials |
 
 ### Organization Data Format
 ```json
@@ -134,7 +134,7 @@ curl -X POST http://localhost:8000/api/run-session/ \
 curl -X POST http://localhost:8000/api/run-session/ \
   -F "graph_id=123" \
   -F "variables={\"var1\": \"my_value\"}" \
-  -F "user_data={\"username\": \"john_doe\", \"secret_key\": \"user_secret_456\"}"
+  -F "organization_user_data={\"username\": \"john_doe\", \"secret_key\": \"user_secret_456\"}"
 ```
 
 **With Both Organization and User Variables**
@@ -143,7 +143,7 @@ curl -X POST http://localhost:8000/api/run-session/ \
   -F "graph_id=123" \
   -F "variables={\"var1\": \"my_value\"}" \
   -F "organization_data={\"name\": \"acme_corp\", \"secret_key\": \"org_secret_123\"}" \
-  -F "user_data={\"username\": \"john_doe\", \"secret_key\": \"user_secret_456\"}" \
+  -F "organization_user_data={\"username\": \"john_doe\", \"secret_key\": \"user_secret_456\"}" \
   -F "file1=@example.txt"
 ```
 
@@ -172,7 +172,7 @@ url = "http://localhost:8000/api/run-session/"
 data = {
     "graph_id": 123,
     "variables": '{"var1": "my_value"}',
-    "user_data": '{"username": "john_doe", "secret_key": "user_secret_456"}'
+    "organization_user_data": '{"username": "john_doe", "secret_key": "user_secret_456"}'
 }
 
 response = requests.post(url, data=data)
